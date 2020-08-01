@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Chat from './chat';
 import TinderCards from './TinderCards';
+import SwipeButtons from './SwipeButtons';
 
 
 import {
@@ -15,16 +16,20 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
-
         <Switch>
-          <Route path="/">
-            <TinderCards />
-          </Route>
           <Route path="/chat">
+            <Header backButton="/" />
             <Chat />
+            {/* <h1>gygy</h1> */}
           </Route>
+          <Route path="/">
+            <Header/>
+            <TinderCards />
+            <SwipeButtons />
+
+          </Route>
+
         </Switch>
       </Router>
     </div>
